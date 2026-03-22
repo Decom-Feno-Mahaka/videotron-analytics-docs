@@ -60,7 +60,7 @@ High-level system flow:
 4. Results are stored and visualized in dashboard
 
 More details can be found in:
-👉 `docs/07_architecture.md`
+👉 `diagrams/architecture.md`
 
 ---
 
