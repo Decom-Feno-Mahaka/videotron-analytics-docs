@@ -2,10 +2,7 @@
 nixPkgs = ["nodejs"]
 
 [phases.install]
-cmds = ["cd prototype/simple-backend && npm install"]
-
-[phases.build]
-cmds = ["cd prototype/simple-backend"]
+cmds = ["cd prototype/simple-backend", "npm install"]
 
 [start]
-cmd = "cd prototype/simple-backend && npm start"
+cmd = "cd prototype/simple-backend && node server.js"
