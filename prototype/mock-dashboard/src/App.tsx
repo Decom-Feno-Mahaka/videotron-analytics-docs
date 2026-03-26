@@ -34,6 +34,8 @@ type StatsResponse = {
   recentEvents: EventPayload[];
 };
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function App() {
   const [stats, setStats] = createSignal<StatsResponse | null>(null);
   const [isConnected, setIsConnected] = createSignal(false);
@@ -49,7 +51,7 @@ function App() {
 
   const fetchData = async () => { // Renamed from fetchStats
     try {
-      const res = await fetch(`http://localhost:3000/api/stats?timeScale=${timeScale()}`);
+      const res = await fetch(`${API_URL}/api/stats?timeScale=${timeScale()}`);
       if (res.ok) {
         const data: StatsResponse = await res.json();
         setStats(data);
